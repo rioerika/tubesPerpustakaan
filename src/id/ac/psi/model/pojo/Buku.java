@@ -12,7 +12,7 @@ import java.sql.Date;
  * @author RioErika
  */
 public class Buku {
-        private int id;
+    private int id;
     private String judulBuku;
     private String namaPengarang;
     private Date tahunTerbit;
