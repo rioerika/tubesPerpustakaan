@@ -12,47 +12,5 @@ import java.sql.Date;
  * @author RioErika
  */
 public class BukuModel {
-    private int id;
-    private String judulBuku;
-    private String namaPengarang;
-    private Date tahunTerbit;
-    
-    public BukuModel(){
-        
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getJudulBuku() {
-        return judulBuku;
-    }
-
-    public void setJudulBuku(String judulBuku) {
-        this.judulBuku = judulBuku;
-    }
-
-    public String getNamaPengarang() {
-        return namaPengarang;
-    }
-
-    public void setNamaPengarang(String namaPengarang) {
-        this.namaPengarang = namaPengarang;
-    }
-
-    public Date getTahunTerbit() {
-        return tahunTerbit;
-    }
-
-    public void setTahunTerbit(Date tahunTerbit) {
-        this.tahunTerbit = tahunTerbit;
-    }
-    
-    
-    
+   
 }
