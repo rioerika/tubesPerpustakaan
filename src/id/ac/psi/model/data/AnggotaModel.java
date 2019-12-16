@@ -8,6 +8,7 @@ package id.ac.psi.model.data;
 import id.ac.psi.model.pojo.Anggota;
 import id.ac.psi.utilities.ConnectionDB;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -42,6 +43,24 @@ public class AnggotaModel {
        }
     } 
        return anggotaList;
+    }
+        
+    
+      public int update(Anggota anggota) throws SQLException {
+         Connection con = ConnectionDB.getConnection();
+        try{
+            PreparedStatement stat = con.prepareStatement("UPDATE mahasiswa SET nama = ?, email = ?, jurusan = ? WHERE id = ?");
+            stat.setString(1, anggota.getNama());
+            stat.setString(2, anggota.getEmail());
+            stat.setString(3, anggota.getJurusan());
+            stat.setInt(4, anggota.getId());
+            return stat.executeUpdate();
+        }finally{
+            if (con !=null){
+                con.close();
+            }
+            
+        }
     }
     
 }

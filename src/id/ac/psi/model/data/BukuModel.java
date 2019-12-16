@@ -15,6 +15,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.Date;
+import java.sql.PreparedStatement;
 
 /**
  *
@@ -46,6 +47,22 @@ public class BukuModel {
             }
         } 
        return listBuku;
+    }
+    
+      public int update(Buku buku) throws SQLException {
+         Connection con = ConnectionDB.getConnection();
+        try{
+            PreparedStatement stat = con.prepareStatement("UPDATE mahasiswa SET judulBuku = ?, namaPengarang = ? WHERE idBuku = ?");
+            stat.setString(1, buku.getJudulBuku());
+            stat.setString(2, buku.getNamaPengarang());
+            stat.setInt(3, buku.getId());
+            return stat.executeUpdate();
+        }finally{
+            if (con !=null){
+                con.close();
+            }
+            
+        }
     }
         public static void main(String[] args) throws SQLException {
             BukuModel b = new BukuModel();
