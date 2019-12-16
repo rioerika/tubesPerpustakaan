@@ -5,11 +5,43 @@
  */
 package id.ac.psi.model.data;
 
+import id.ac.psi.model.pojo.Anggota;
+import id.ac.psi.utilities.ConnectionDB;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+
 /**
  *
  * @author RioErika
  */
 public class AnggotaModel {
-
+        public List<Anggota> loadAnggota() throws SQLException{
+        List<Anggota> anggotaList;
+        Connection con = ConnectionDB.getConnection();
+    try{
+    Statement state = con.createStatement();
+    ResultSet rs = state.executeQuery("SELECT * FROM tbl_anggota");
+    anggotaList = new ArrayList<>();
+    while (rs.next()){
+        Anggota anggota = new Anggota();
+        anggota.setNama(rs.getString("nama"));
+        anggota.setNrp(rs.getString("nrp"));
+        anggota.setEmail(rs.getString("email"));
+        
+        anggotaList.add(anggota);
+    }
+    
+    }finally{
+       if (con !=null){
+        con.close();
+       }
+    } 
+       return anggotaList;
+    }
     
 }

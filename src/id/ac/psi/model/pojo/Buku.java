@@ -16,6 +16,7 @@ public class Buku {
     private String judulBuku;
     private String namaPengarang;
     private Date tahunTerbit;
+    private int jumlahBuku;
     
     public Buku(){
         
@@ -52,4 +53,14 @@ public class Buku {
     public void setTahunTerbit(Date tahunTerbit) {
         this.tahunTerbit = tahunTerbit;
     }
+
+    public int getJumlahBuku() {
+        return jumlahBuku;
+    }
+
+    public void setJumlahBuku(int jumlahBuku) {
+        this.jumlahBuku = jumlahBuku;
+    }
+    
+    
 }

@@ -11,7 +11,7 @@ import java.sql.Date;
  *
  * @author RioErika
  */
-public class Peminjamaan {
+public class Peminjaman {
     private int id;
     private Anggota anggota;
     private Buku buku;
@@ -21,7 +21,7 @@ public class Peminjamaan {
 
     
     
-    public Peminjamaan(){
+    public Peminjaman(){
         
     }
     public int getId() {
