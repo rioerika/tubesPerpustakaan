@@ -22,6 +22,23 @@ import java.sql.PreparedStatement;
  * @author RioErika
  */
 public class BukuModel {
+    
+    public int save(Buku buku) throws SQLException{
+        Connection con = ConnectionDB.getConnection();
+        try{
+            PreparedStatement stat = con.prepareStatement("INSERT INTO tbl_buku values (?,?,?)");
+            stat.setString(1, buku.getJudulBuku());
+            stat.setString(2, buku.getNamaPengarang());
+            stat.setInt(3, buku.getJumlahBuku());
+            return stat.executeUpdate();
+        }finally{
+            if (con !=null){
+                con.close();
+            }
+            
+        }
+    }
+
     public List<Buku> loadBuku() throws SQLException{
         List<Buku> listBuku;
         Connection con = ConnectionDB.getConnection();
