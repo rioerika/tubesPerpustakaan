@@ -21,21 +21,39 @@ import java.util.List;
  * @author RioErika
  */
 public class AnggotaModel {
-        public List<Anggota> loadAnggota() throws SQLException{
-        List<Anggota> anggotaList;
+    public int save(Anggota anggota) throws SQLException{
         Connection con = ConnectionDB.getConnection();
-    try{
-    Statement state = con.createStatement();
-    ResultSet rs = state.executeQuery("SELECT * FROM tbl_anggota");
-    anggotaList = new ArrayList<>();
-    while (rs.next()){
-        Anggota anggota = new Anggota();
-        anggota.setNama(rs.getString("nama"));
-        anggota.setNrp(rs.getString("nrp"));
-        anggota.setEmail(rs.getString("email"));
-        
-        anggotaList.add(anggota);
+        try{
+            PreparedStatement stat = con.prepareStatement("INSERT INTO tbl_anggota values (idAnggota='',?,?,?,?)");
+            stat.setString(1, anggota.getNama());
+            stat.setString(2, anggota.getNrp());
+            stat.setString(3, anggota.getEmail());
+            stat.setString(4, anggota.getJurusan());
+            return stat.executeUpdate();
+        }finally{
+            if (con !=null){
+                con.close();
+            }
+            
+        }
     }
+
+    
+    public List<Anggota> loadAnggota() throws SQLException{
+    List<Anggota> anggotaList;
+    Connection con = ConnectionDB.getConnection();
+    try{
+        Statement state = con.createStatement();
+        ResultSet rs = state.executeQuery("SELECT * FROM tbl_anggota");
+        anggotaList = new ArrayList<>();
+        while (rs.next()){
+            Anggota anggota = new Anggota();
+            anggota.setNama(rs.getString("nama"));
+            anggota.setNrp(rs.getString("nrp"));
+            anggota.setEmail(rs.getString("email"));
+        
+            anggotaList.add(anggota);
+        }
     
     }finally{
        if (con !=null){

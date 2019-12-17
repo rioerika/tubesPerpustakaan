@@ -5,18 +5,28 @@
  */
 package id.ac.psi.view;
 
+import id.ac.psi.controller.AnggotaController;
+import id.ac.psi.model.pojo.Anggota;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author sans kuy
  */
 public class RegistrasiFrame extends javax.swing.JFrame {
-
-    /**
-     * Creates new form UserFrame
-     */
+    AnggotaController anggotaCon = new AnggotaController();
+    private DefaultTableModel model;
+    
     public RegistrasiFrame() {
         initComponents();
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,21 +45,44 @@ public class RegistrasiFrame extends javax.swing.JFrame {
         tfEmail = new javax.swing.JTextField();
         btnSubmit = new javax.swing.JButton();
         lblRegistrasi = new javax.swing.JLabel();
+        tfJurusan = new javax.swing.JTextField();
+        lblJurusan = new javax.swing.JLabel();
+        tfNrp = new javax.swing.JTextField();
+        lblNrp = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnMain.setText("Main Menu");
+        btnMain.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMainActionPerformed(evt);
+            }
+        });
 
         btnDaftarAnggota.setText("Daftar Anggota");
+        btnDaftarAnggota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDaftarAnggotaActionPerformed(evt);
+            }
+        });
 
         lblNama.setText("Nama :");
 
         lblEmail.setText("Email :");
 
         btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitActionPerformed(evt);
+            }
+        });
 
         lblRegistrasi.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblRegistrasi.setText("Registrasi Anggota");
+
+        lblJurusan.setText("Jurusan :");
+
+        lblNrp.setText("Nrp :");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -60,25 +93,35 @@ public class RegistrasiFrame extends javax.swing.JFrame {
                 .addComponent(btnSubmit)
                 .addGap(24, 24, 24))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnMain)
-                            .addComponent(btnDaftarAnggota)))
+                            .addComponent(lblJurusan, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(3, 3, 3)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblEmail)
+                                    .addComponent(lblNrp))))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfJurusan, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfNrp, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addComponent(lblRegistrasi))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblEmail)
-                            .addComponent(lblNama))
+                        .addGap(3, 3, 3)
+                        .addComponent(lblNama)
                         .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tfNama)
-                            .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(115, Short.MAX_VALUE))
+                        .addComponent(tfNama, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btnMain)
+                                .addComponent(btnDaftarAnggota)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(106, 106, 106)
+                            .addComponent(lblRegistrasi))))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,15 +132,23 @@ public class RegistrasiFrame extends javax.swing.JFrame {
                 .addComponent(btnDaftarAnggota)
                 .addGap(25, 25, 25)
                 .addComponent(lblRegistrasi)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNama)
                     .addComponent(tfNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfNrp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNrp))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEmail)
                     .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(52, 52, 52)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfJurusan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblJurusan))
+                .addGap(7, 7, 7)
                 .addComponent(btnSubmit)
                 .addGap(22, 22, 22))
         );
@@ -105,9 +156,35 @@ public class RegistrasiFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+        int status = 0;
+      
+        try {
+            //          DefaultTableModel model = (DefaultTableModel) tblMahasiswa.getModel();
+            status = anggotaCon.insert(new Anggota(tfNama.getText(), tfNrp.getText(),
+                    tfEmail.getText(), tfJurusan.getText()));
+//          refreshTable();
+        } catch (SQLException ex) {
+            Logger.getLogger(RegistrasiFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     
+    
+      if (status == 1) {
+          JOptionPane.showMessageDialog(this, "Anggota Berhasil di tambahkan");
+      } else {
+          JOptionPane.showMessageDialog(this, "Anggota Gagal di tambahkan");
+      }
+    }//GEN-LAST:event_btnSubmitActionPerformed
+
+    private void btnMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMainActionPerformed
+        
+    }//GEN-LAST:event_btnMainActionPerformed
+
+    private void btnDaftarAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDaftarAnggotaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDaftarAnggotaActionPerformed
+
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -152,9 +229,13 @@ public class RegistrasiFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnMain;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblJurusan;
     private javax.swing.JLabel lblNama;
+    private javax.swing.JLabel lblNrp;
     private javax.swing.JLabel lblRegistrasi;
     private javax.swing.JTextField tfEmail;
+    private javax.swing.JTextField tfJurusan;
     private javax.swing.JTextField tfNama;
+    private javax.swing.JTextField tfNrp;
     // End of variables declaration//GEN-END:variables
 }

@@ -20,6 +20,13 @@ public class Anggota {
         
     }
     
+    public Anggota (String nama, String nrp, String email, String jurusan){
+        this.nama = nama;
+        this.nrp = nrp;
+        this.email= email;
+        this.jurusan = jurusan;
+    }
+    
     public int getId() {
         return id;
     }
