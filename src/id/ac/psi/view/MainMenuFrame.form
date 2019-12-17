@@ -41,12 +41,15 @@
               </Group>
               <EmptySpace pref="66" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jButton1" max="32767" attributes="0"/>
-                  <Component id="btnPengembalian" alignment="0" max="32767" attributes="0"/>
-                  <Component id="btnPeminjaman" alignment="0" max="32767" attributes="0"/>
-                  <Component id="btnData" alignment="0" max="32767" attributes="0"/>
-                  <Component id="btnRegistrasi" alignment="0" max="32767" attributes="0"/>
-                  <Component id="btnCari" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnTambahBuku" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jButton1" max="32767" attributes="0"/>
+                      <Component id="btnPengembalian" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btnPeminjaman" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btnData" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btnRegistrasi" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btnCari" alignment="0" max="32767" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
           </Group>
@@ -77,18 +80,15 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="59" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="btnTambahBuku" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="30" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JLabel" name="lblGambarBuku">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\sans kuy\Downloads\open-book (3).png"/>
-        </Property>
-      </Properties>
     </Component>
     <Component class="javax.swing.JToggleButton" name="btnRegistrasi">
       <Properties>
@@ -123,6 +123,11 @@
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Daftar Buku yang Dipinjam"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnTambahBuku">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tambah Buku"/>
       </Properties>
     </Component>
   </SubComponents>

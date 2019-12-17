@@ -31,8 +31,8 @@ public class PeminjamanModel {
             while (rs.next()) {
                 Peminjaman pinjam = new Peminjaman();
                 pinjam.setId(rs.getInt("idPinjam"));
-                pinjam.setAnggota();
-                pinjam.setTahunTerbit(rs.getDate("tahunTerbit"));
+//                pinjam.setAnggota();
+//                pinjam.setTahunTerbit(rs.getDate("tahunTerbit"));
                 
                 listPeminjaman.add(pinjam);
                 
