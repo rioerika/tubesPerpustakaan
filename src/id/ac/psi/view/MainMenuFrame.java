@@ -35,7 +35,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
         btnPengembalian = new javax.swing.JButton();
         btnPeminjaman = new javax.swing.JButton();
         lblPerpustakaan = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnBukuDipinjam = new javax.swing.JButton();
         btnTambahBuku = new javax.swing.JButton();
 
         jButton4.setText("jButton4");
@@ -43,20 +43,55 @@ public class MainMenuFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnRegistrasi.setText("Registrasi anggota");
+        btnRegistrasi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrasiActionPerformed(evt);
+            }
+        });
 
         btnCari.setText("Cari Buku");
+        btnCari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCariActionPerformed(evt);
+            }
+        });
 
         btnData.setText("Data User");
+        btnData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDataActionPerformed(evt);
+            }
+        });
 
         btnPengembalian.setText("Pengembalian Buku");
+        btnPengembalian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPengembalianActionPerformed(evt);
+            }
+        });
 
         btnPeminjaman.setText("Peminjaman Buku");
+        btnPeminjaman.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPeminjamanActionPerformed(evt);
+            }
+        });
 
         lblPerpustakaan.setText("Perpustakaan");
 
-        jButton1.setText("Daftar Buku yang Dipinjam");
+        btnBukuDipinjam.setText("Daftar Buku yang Dipinjam");
+        btnBukuDipinjam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBukuDipinjamActionPerformed(evt);
+            }
+        });
 
         btnTambahBuku.setText("Tambah Buku");
+        btnTambahBuku.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTambahBukuActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -72,13 +107,12 @@ public class MainMenuFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnTambahBuku, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnPengembalian, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnPeminjaman, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnRegistrasi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCari, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(btnBukuDipinjam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPengembalian, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPeminjaman, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnRegistrasi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCari, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(65, 65, 65))
         );
         layout.setVerticalGroup(
@@ -102,7 +136,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnPeminjaman)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(btnBukuDipinjam)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnTambahBuku)
                 .addContainerGap(30, Short.MAX_VALUE))
@@ -110,6 +144,47 @@ public class MainMenuFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRegistrasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrasiActionPerformed
+        // TODO add your handling code here:
+        RegistrasiFrame btnRegistrasiFrame = new RegistrasiFrame(); btnRegistrasiFrame.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnRegistrasiActionPerformed
+
+    private void btnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariActionPerformed
+        // TODO add your handling code here:
+        CariBukuFrame btnCariFrame = new CariBukuFrame(); btnCariFrame.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnCariActionPerformed
+
+    private void btnDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDataActionPerformed
+        // TODO add your handling code here:
+        UserFrame btnDataFrame = new UserFrame(); btnDataFrame.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnDataActionPerformed
+
+    private void btnPengembalianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPengembalianActionPerformed
+        // TODO add your handling code here:
+        PengembalianBukuFrame btnPengembalianFrame = new PengembalianBukuFrame(); btnPengembalianFrame.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnPengembalianActionPerformed
+
+    private void btnPeminjamanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPeminjamanActionPerformed
+        // TODO add your handling code here:
+        PinjamBukuFrame btnPeminjamanFrame = new PinjamBukuFrame(); btnPeminjamanFrame.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnPeminjamanActionPerformed
+
+    private void btnBukuDipinjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBukuDipinjamActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnBukuDipinjamActionPerformed
+
+    private void btnTambahBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahBukuActionPerformed
+        // TODO add your handling code here:
+        TambahBuku btnTambahBukuFrame = new TambahBuku(); btnTambahBukuFrame.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnTambahBukuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,13 +225,13 @@ public class MainMenuFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBukuDipinjam;
     private javax.swing.JButton btnCari;
     private javax.swing.JButton btnData;
     private javax.swing.JButton btnPeminjaman;
     private javax.swing.JButton btnPengembalian;
     private javax.swing.JToggleButton btnRegistrasi;
     private javax.swing.JButton btnTambahBuku;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel lblGambarBuku;
     private javax.swing.JLabel lblPerpustakaan;

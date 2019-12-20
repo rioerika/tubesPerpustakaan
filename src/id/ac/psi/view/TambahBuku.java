@@ -27,7 +27,7 @@ public class TambahBuku extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnMain = new javax.swing.JButton();
+        btnMenu = new javax.swing.JButton();
         lblRegistrasi = new javax.swing.JLabel();
         lblJudul = new javax.swing.JLabel();
         lblPengarang = new javax.swing.JLabel();
@@ -41,7 +41,12 @@ public class TambahBuku extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnMain.setText("Main Menu");
+        btnMenu.setText("Main Menu");
+        btnMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuActionPerformed(evt);
+            }
+        });
 
         lblRegistrasi.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblRegistrasi.setText("Tambah Buku");
@@ -68,7 +73,7 @@ public class TambahBuku extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(btnMain))
+                        .addComponent(btnMenu))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(60, 60, 60)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,7 +94,7 @@ public class TambahBuku extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnMain)
+                .addComponent(btnMenu)
                 .addGap(26, 26, 26)
                 .addComponent(lblRegistrasi)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -115,6 +120,12 @@ public class TambahBuku extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
+        // TODO add your handling code here:
+        MainMenuFrame btnMenuFrame = new MainMenuFrame(); btnMenuFrame.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnMenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,7 +163,7 @@ public class TambahBuku extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnMain;
+    private javax.swing.JButton btnMenu;
     private javax.swing.JButton btnTambah;
     private javax.swing.JLabel lblJudul;
     private javax.swing.JLabel lblJumlah;

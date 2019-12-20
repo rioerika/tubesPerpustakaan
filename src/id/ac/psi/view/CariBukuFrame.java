@@ -63,6 +63,11 @@ public class CariBukuFrame extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblHasilCari);
 
         btnMenu.setText("Main Menu");
+        btnMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuActionPerformed(evt);
+            }
+        });
 
         btnPinjam.setText("Pinjam Buku");
 
@@ -126,6 +131,12 @@ public class CariBukuFrame extends javax.swing.JFrame {
     private void btnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCariActionPerformed
+
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
+        // TODO add your handling code here:
+        MainMenuFrame btnMenuFrame = new MainMenuFrame(); btnMenuFrame.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnMenuActionPerformed
 
     /**
      * @param args the command line arguments

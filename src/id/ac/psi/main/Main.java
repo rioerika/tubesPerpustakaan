@@ -5,10 +5,15 @@
  */
 package id.ac.psi.main;
 
+import id.ac.psi.view.MainMenuFrame;
+import java.sql.SQLException;
+
 /**
  *
  * @author RioErika
  */
 public class Main {
-    
+    public static void main(String[]args) throws SQLException{
+        new MainMenuFrame().setVisible(true);
+}
 }

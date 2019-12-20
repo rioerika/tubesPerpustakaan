@@ -37,7 +37,7 @@ public class RegistrasiFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnMain = new javax.swing.JButton();
+        btnMenu = new javax.swing.JButton();
         btnDaftarAnggota = new javax.swing.JButton();
         lblNama = new javax.swing.JLabel();
         lblEmail = new javax.swing.JLabel();
@@ -52,10 +52,10 @@ public class RegistrasiFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnMain.setText("Main Menu");
-        btnMain.addActionListener(new java.awt.event.ActionListener() {
+        btnMenu.setText("Main Menu");
+        btnMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMainActionPerformed(evt);
+                btnMenuActionPerformed(evt);
             }
         });
 
@@ -116,7 +116,7 @@ public class RegistrasiFrame extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addContainerGap()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btnMain)
+                                .addComponent(btnMenu)
                                 .addComponent(btnDaftarAnggota)))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(106, 106, 106)
@@ -127,7 +127,7 @@ public class RegistrasiFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnMain)
+                .addComponent(btnMenu)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDaftarAnggota)
                 .addGap(25, 25, 25)
@@ -141,7 +141,7 @@ public class RegistrasiFrame extends javax.swing.JFrame {
                     .addComponent(tfNrp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNrp))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblEmail)
                     .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -176,9 +176,10 @@ public class RegistrasiFrame extends javax.swing.JFrame {
       }
     }//GEN-LAST:event_btnSubmitActionPerformed
 
-    private void btnMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMainActionPerformed
-        
-    }//GEN-LAST:event_btnMainActionPerformed
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
+        MainMenuFrame btnMenuFrame = new MainMenuFrame(); btnMenuFrame.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnMenuActionPerformed
 
     private void btnDaftarAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDaftarAnggotaActionPerformed
         // TODO add your handling code here:
@@ -226,7 +227,7 @@ public class RegistrasiFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDaftarAnggota;
-    private javax.swing.JButton btnMain;
+    private javax.swing.JButton btnMenu;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblJurusan;
