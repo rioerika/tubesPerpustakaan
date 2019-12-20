@@ -24,7 +24,7 @@ public class AnggotaModel {
     public int save(Anggota anggota) throws SQLException{
         Connection con = ConnectionDB.getConnection();
         try{
-            PreparedStatement stat = con.prepareStatement("INSERT INTO tbl_anggota values (idAnggota='',?,?,?,?)");
+            PreparedStatement stat = con.prepareStatement("INSERT INTO tbl_anggota values (idAnggota='',?,?,?,?)idAnggota='',");
             stat.setString(1, anggota.getNama());
             stat.setString(2, anggota.getNrp());
             stat.setString(3, anggota.getEmail());

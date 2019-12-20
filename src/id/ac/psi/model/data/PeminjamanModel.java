@@ -42,6 +42,6 @@ public class PeminjamanModel {
                 con.close();
             }
         } 
-       return listBuku;
+       return listPeminjaman;
     }
 }
