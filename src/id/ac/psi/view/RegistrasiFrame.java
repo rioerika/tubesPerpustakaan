@@ -166,9 +166,13 @@ public class RegistrasiFrame extends javax.swing.JFrame {
             Logger.getLogger(RegistrasiFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
      
-    
+        System.out.println();
       if (status == 1) {
           JOptionPane.showMessageDialog(this, "Anggota Berhasil di tambahkan");
+          MainMenuFrame menu = new MainMenuFrame();
+          menu.setVisible(true);
+          setVisible(false);
+          
       } else {
           JOptionPane.showMessageDialog(this, "Anggota Gagal di tambahkan");
       }

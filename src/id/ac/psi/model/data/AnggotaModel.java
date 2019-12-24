@@ -22,10 +22,6 @@ import java.util.List;
  */
 public class AnggotaModel {
     public int save(Anggota anggota) throws SQLException{
-        System.out.println(anggota.getNrp());
-        System.out.println(anggota.getNama());
-        System.out.println(anggota.getEmail());
-        System.out.println(anggota.getJurusan());
         Connection con = ConnectionDB.getConnection();
         try{
             PreparedStatement stat = con.prepareStatement("INSERT INTO tbl_anggota values (?,?,?,?)");
