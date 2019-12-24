@@ -8,6 +8,7 @@ package id.ac.psi.view;
 import id.ac.psi.controller.BukuController;
 import id.ac.psi.model.pojo.Anggota;
 import id.ac.psi.model.pojo.Buku;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -46,7 +47,7 @@ public class TambahBuku extends javax.swing.JFrame {
         tfPengarang = new javax.swing.JTextField();
         tfJumlah = new javax.swing.JTextField();
         btnTambah = new javax.swing.JButton();
-        jYearChooser2 = new com.toedter.calendar.JYearChooser();
+        tfTahunTerbit = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,7 +102,7 @@ public class TambahBuku extends javax.swing.JFrame {
                             .addComponent(tfJudul, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
                             .addComponent(tfPengarang, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tfJumlah)
-                            .addComponent(jYearChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(tfTahunTerbit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(109, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -131,7 +132,7 @@ public class TambahBuku extends javax.swing.JFrame {
                         .addComponent(btnTambah)
                         .addGap(40, 40, 40))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jYearChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfTahunTerbit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -149,7 +150,7 @@ public class TambahBuku extends javax.swing.JFrame {
       
         try {
             status = con.insert(new Buku( tfJudul.getText(),tfPengarang.getText(),
-                    tfTahunTerbit.getText(), Integer.valueOf(tfJumlah.getText())));
+                    (Date) tfTahunTerbit.getDate(), Integer.valueOf(tfJumlah.getText())));
         } catch (SQLException ex) {
             Logger.getLogger(RegistrasiFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -205,7 +206,6 @@ public class TambahBuku extends javax.swing.JFrame {
     private javax.swing.JButton btnMenu;
     private javax.swing.JButton btnTambah;
     private com.toedter.calendar.JYearChooser jYearChooser1;
-    private com.toedter.calendar.JYearChooser jYearChooser2;
     private javax.swing.JLabel lblJudul;
     private javax.swing.JLabel lblJumlah;
     private javax.swing.JLabel lblPengarang;
@@ -214,5 +214,6 @@ public class TambahBuku extends javax.swing.JFrame {
     private javax.swing.JTextField tfJudul;
     private javax.swing.JTextField tfJumlah;
     private javax.swing.JTextField tfPengarang;
+    private com.toedter.calendar.JDateChooser tfTahunTerbit;
     // End of variables declaration//GEN-END:variables
 }

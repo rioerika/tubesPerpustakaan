@@ -52,7 +52,7 @@
                           <Component id="tfJudul" alignment="0" pref="150" max="32767" attributes="0"/>
                           <Component id="tfPengarang" alignment="0" max="32767" attributes="0"/>
                           <Component id="tfJumlah" max="32767" attributes="0"/>
-                          <Component id="jYearChooser2" max="32767" attributes="0"/>
+                          <Component id="tfTahunTerbit" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -91,7 +91,7 @@
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="jYearChooser2" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfTahunTerbit" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -150,7 +150,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTambahActionPerformed"/>
       </Events>
     </Component>
-    <Component class="com.toedter.calendar.JYearChooser" name="jYearChooser2">
+    <Component class="com.toedter.calendar.JDateChooser" name="tfTahunTerbit">
     </Component>
   </SubComponents>
 </Form>
