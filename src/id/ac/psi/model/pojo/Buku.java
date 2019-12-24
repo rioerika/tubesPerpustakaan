@@ -6,6 +6,7 @@
 package id.ac.psi.model.pojo;
 
 import java.sql.Date;
+import java.time.Year;
 
 /**
  *
@@ -15,11 +16,18 @@ public class Buku {
     private int id;
     private String judulBuku;
     private String namaPengarang;
-    private Date tahunTerbit;
+    private Year tahunTerbit;
     private int jumlahBuku;
     
     public Buku(){
         
+    }
+    
+    public Buku(String judulBuku, String namaPengarang, Year tahunTerbit, int jumlahBuku){
+        this.judulBuku = judulBuku;
+        this.namaPengarang = namaPengarang;
+        this.tahunTerbit = tahunTerbit;
+        this.jumlahBuku = jumlahBuku;
     }
 
     public int getId() {

@@ -5,12 +5,20 @@
  */
 package id.ac.psi.view;
 
+import id.ac.psi.controller.BukuController;
+import id.ac.psi.model.pojo.Anggota;
+import id.ac.psi.model.pojo.Buku;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author da641
  */
 public class TambahBuku extends javax.swing.JFrame {
-
+    BukuController con = new BukuController();
     /**
      * Creates new form TambahBuku
      */
@@ -60,6 +68,11 @@ public class TambahBuku extends javax.swing.JFrame {
         lblJumlah.setText("Jumlah :");
 
         btnTambah.setText("Tambah");
+        btnTambah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTambahActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -126,6 +139,28 @@ public class TambahBuku extends javax.swing.JFrame {
         MainMenuFrame btnMenuFrame = new MainMenuFrame(); btnMenuFrame.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnMenuActionPerformed
+
+    private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
+                int status = 0;
+      
+        try {
+            status = con.insert(new Buku( tfJudul.getText(),tfPengarang.getText(),
+                    tfTahunTerbit.getText(), Integer.valueOf(tfJumlah.getText())));
+        } catch (SQLException ex) {
+            Logger.getLogger(RegistrasiFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     
+        System.out.println();
+      if (status == 1) {
+          JOptionPane.showMessageDialog(this, "Buku Berhasil di tambahkan");
+          MainMenuFrame menu = new MainMenuFrame();
+          menu.setVisible(true);
+          setVisible(false);
+          
+      } else {
+          JOptionPane.showMessageDialog(this, "Buku Gagal di tambahkan");
+      }
+    }//GEN-LAST:event_btnTambahActionPerformed
 
     /**
      * @param args the command line arguments
