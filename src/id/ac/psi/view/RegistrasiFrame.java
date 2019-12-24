@@ -38,7 +38,6 @@ public class RegistrasiFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         btnMenu = new javax.swing.JButton();
-        btnDaftarAnggota = new javax.swing.JButton();
         lblNama = new javax.swing.JLabel();
         lblEmail = new javax.swing.JLabel();
         tfNama = new javax.swing.JTextField();
@@ -56,13 +55,6 @@ public class RegistrasiFrame extends javax.swing.JFrame {
         btnMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMenuActionPerformed(evt);
-            }
-        });
-
-        btnDaftarAnggota.setText("Daftar Anggota");
-        btnDaftarAnggota.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDaftarAnggotaActionPerformed(evt);
             }
         });
 
@@ -115,9 +107,7 @@ public class RegistrasiFrame extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addContainerGap()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btnMenu)
-                                .addComponent(btnDaftarAnggota)))
+                            .addComponent(btnMenu))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(106, 106, 106)
                             .addComponent(lblRegistrasi))))
@@ -128,9 +118,7 @@ public class RegistrasiFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnMenu)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDaftarAnggota)
-                .addGap(25, 25, 25)
+                .addGap(54, 54, 54)
                 .addComponent(lblRegistrasi)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -183,10 +171,6 @@ public class RegistrasiFrame extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnMenuActionPerformed
 
-    private void btnDaftarAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDaftarAnggotaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnDaftarAnggotaActionPerformed
-
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -228,7 +212,6 @@ public class RegistrasiFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDaftarAnggota;
     private javax.swing.JButton btnMenu;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel lblEmail;
