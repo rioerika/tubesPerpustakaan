@@ -3,8 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/RioErika/Documents/NetBeansProjects/tubesPerpustakaan/src/id/ac/psi/model/pojo/Buku.java</file>
-            <file>file:/C:/Users/RioErika/Documents/NetBeansProjects/tubesPerpustakaan/src/id/ac/psi/model/data/BukuModel.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/tubesPerpustakaan/src/id/ac/psi/main/Main.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/tubesPerpustakaan/src/id/ac/psi/view/PinjamBukuFrame.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/tubesPerpustakaan/src/id/ac/psi/model/data/AnggotaModel.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/tubesPerpustakaan/src/id/ac/psi/view/PengembalianBukuFrame.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/tubesPerpustakaan/src/id/ac/psi/view/RegistrasiFrame.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/tubesPerpustakaan/src/id/ac/psi/utilities/ConnectionDB.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/tubesPerpustakaan/src/id/ac/psi/view/MainMenuFrame.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/tubesPerpustakaan/src/id/ac/psi/view/UserFrame.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/tubesPerpustakaan/src/id/ac/psi/model/data/PeminjamanModel.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/tubesPerpustakaan/src/id/ac/psi/view/CariBukuFrame.java</file>
+            <file>file:/C:/Users/Asus/Documents/NetBeansProjects/tubesPerpustakaan/src/id/ac/psi/view/TambahBuku.java</file>
         </group>
     </open-files>
 </project-private>

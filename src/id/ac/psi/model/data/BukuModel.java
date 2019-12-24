@@ -100,6 +100,12 @@ public class BukuModel {
              
              
     }
+        
+        public void tampil(){
+            Connection con = ConnectionDB.getConnection();
+             
+            
+        }
     }
    
 

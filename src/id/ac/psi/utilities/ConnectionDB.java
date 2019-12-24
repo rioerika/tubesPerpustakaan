@@ -14,7 +14,7 @@ import java.sql.DriverManager;
  */
 public class ConnectionDB {
      public static Connection getConnection() {
-        return getConnection("jdbc:mysql://localhost/db_perpustakaan", "root", "");
+        return getConnection("jdbc:mysql://localhost/perpustakaan", "root", "");
     }
      
       private static Connection getConnection(String url, String user, String pass) {
