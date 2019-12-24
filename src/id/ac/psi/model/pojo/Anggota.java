@@ -10,7 +10,6 @@ package id.ac.psi.model.pojo;
  * @author RioErika
  */
 public class Anggota {
-    private int id;
     private String nama;
     private String nrp;
     private String email;
@@ -20,19 +19,11 @@ public class Anggota {
         
     }
     
-    public Anggota (String nama, String nrp, String email, String jurusan){
+    public Anggota ( String nrp, String nama, String email, String jurusan){
         this.nama = nama;
         this.nrp = nrp;
         this.email= email;
         this.jurusan = jurusan;
-    }
-    
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNama() {
