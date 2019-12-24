@@ -22,11 +22,15 @@ import java.util.List;
  */
 public class AnggotaModel {
     public int save(Anggota anggota) throws SQLException{
+        System.out.println(anggota.getNrp());
+        System.out.println(anggota.getNama());
+        System.out.println(anggota.getEmail());
+        System.out.println(anggota.getJurusan());
         Connection con = ConnectionDB.getConnection();
         try{
-            PreparedStatement stat = con.prepareStatement("INSERT INTO tbl_anggota values (idAnggota='',?,?,?,?)idAnggota='',");
-            stat.setString(1, anggota.getNama());
-            stat.setString(2, anggota.getNrp());
+            PreparedStatement stat = con.prepareStatement("INSERT INTO tbl_anggota values (?,?,?,?)");
+            stat.setString(1, anggota.getNrp());
+            stat.setString(2, anggota.getNama());
             stat.setString(3, anggota.getEmail());
             stat.setString(4, anggota.getJurusan());
             return stat.executeUpdate();
@@ -71,7 +75,7 @@ public class AnggotaModel {
             stat.setString(1, anggota.getNama());
             stat.setString(2, anggota.getEmail());
             stat.setString(3, anggota.getJurusan());
-            stat.setInt(4, anggota.getId());
+//            stat.setInt(4, anggota.getId());
             return stat.executeUpdate();
         }finally{
             if (con !=null){

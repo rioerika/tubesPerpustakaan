@@ -160,10 +160,8 @@ public class RegistrasiFrame extends javax.swing.JFrame {
         int status = 0;
       
         try {
-            //          DefaultTableModel model = (DefaultTableModel) tblMahasiswa.getModel();
-            status = anggotaCon.insert(new Anggota(tfNama.getText(), tfNrp.getText(),
+            status = anggotaCon.insert(new Anggota( tfNrp.getText(),tfNama.getText(),
                     tfEmail.getText(), tfJurusan.getText()));
-//          refreshTable();
         } catch (SQLException ex) {
             Logger.getLogger(RegistrasiFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
