@@ -5,17 +5,48 @@
  */
 package id.ac.psi.view;
 
+import id.ac.psi.controller.AnggotaController;
+import id.ac.psi.model.pojo.Anggota;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author sans kuy
  */
 public class UserFrame extends javax.swing.JFrame {
-
+    AnggotaController con = new AnggotaController();
+    private DefaultTableModel model;
     /**
      * Creates new form RegistrasiFrame
      */
-    public UserFrame() {
+    public UserFrame() throws SQLException {
         initComponents();
+        populateDataToTable();
+    }
+    
+    public void populateDataToTable() throws SQLException{
+        model = (DefaultTableModel) jtAnggota.getModel();
+        List<Anggota> anggota = con.loadAnggota();
+            int i = 0;
+            for(Anggota agt : anggota) {
+                
+                Object[] row = new Object[5];
+                row[0] =  i = i + 1;
+                row[1] = agt.getNrp();
+                row[2] = agt.getNama();
+                row[3] = agt.getEmail();
+                row[4] = agt.getJurusan();
+                model.addRow(row);
+            }
+       }
+        
+        public void refreshTable() throws SQLException{
+            DefaultTableModel model = (DefaultTableModel) jtAnggota.getModel();
+            model.setRowCount(0);
     }
 
     /**
@@ -32,7 +63,7 @@ public class UserFrame extends javax.swing.JFrame {
         lblDaftar = new javax.swing.JLabel();
         tfCari = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jtAnggota = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,15 +79,23 @@ public class UserFrame extends javax.swing.JFrame {
         lblDaftar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblDaftar.setText("Daftar Anggota Perpustakaan");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jtAnggota.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "No", "Id Anggota", "Nama Anggota", "Email"
+                "No", "Nrp", "Nama Anggota", "Email", "jurusan"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jtAnggota);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -142,7 +181,11 @@ public class UserFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UserFrame().setVisible(true);
+                try {
+                    new UserFrame().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(UserFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
@@ -151,7 +194,7 @@ public class UserFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnMenu;
     private javax.swing.JButton btnRegistrasi;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jtAnggota;
     private javax.swing.JLabel lblDaftar;
     private javax.swing.JTextField tfCari;
     // End of variables declaration//GEN-END:variables

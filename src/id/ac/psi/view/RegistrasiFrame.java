@@ -150,6 +150,7 @@ public class RegistrasiFrame extends javax.swing.JFrame {
         try {
             status = anggotaCon.insert(new Anggota( tfNrp.getText(),tfNama.getText(),
                     tfEmail.getText(), tfJurusan.getText()));
+            new UserFrame().refreshTable();
         } catch (SQLException ex) {
             Logger.getLogger(RegistrasiFrame.class.getName()).log(Level.SEVERE, null, ex);
         }

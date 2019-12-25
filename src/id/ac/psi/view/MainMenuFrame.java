@@ -5,6 +5,10 @@
  */
 package id.ac.psi.view;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author sans kuy
@@ -159,7 +163,13 @@ public class MainMenuFrame extends javax.swing.JFrame {
 
     private void btnDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDataActionPerformed
         // TODO add your handling code here:
-        UserFrame btnDataFrame = new UserFrame(); btnDataFrame.setVisible(true);
+        UserFrame btnDataFrame = null; 
+        try {
+            btnDataFrame = new UserFrame();
+        } catch (SQLException ex) {
+            Logger.getLogger(MainMenuFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        btnDataFrame.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnDataActionPerformed
 

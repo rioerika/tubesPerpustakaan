@@ -9,6 +9,7 @@ import id.ac.psi.controller.BukuController;
 import id.ac.psi.model.pojo.Anggota;
 import id.ac.psi.model.pojo.Buku;
 import java.sql.SQLException;
+import java.time.Year;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -145,7 +146,7 @@ public class TambahBuku extends javax.swing.JFrame {
       
         try {
             status = con.insert(new Buku( tfJudul.getText(),tfPengarang.getText(),
-                    tfTahunTerbit.getText(), Integer.valueOf(tfJumlah.getText())));
+                    Year.valueOf(tfTahunTerbit.getText()), Integer.valueOf(tfJumlah.getText())));
         } catch (SQLException ex) {
             Logger.getLogger(RegistrasiFrame.class.getName()).log(Level.SEVERE, null, ex);
         }

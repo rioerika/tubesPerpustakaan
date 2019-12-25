@@ -51,6 +51,7 @@ public class AnggotaModel {
             anggota.setNama(rs.getString("nama"));
             anggota.setNrp(rs.getString("nrp"));
             anggota.setEmail(rs.getString("email"));
+            anggota.setJurusan(rs.getString("jurusan"));
         
             anggotaList.add(anggota);
         }

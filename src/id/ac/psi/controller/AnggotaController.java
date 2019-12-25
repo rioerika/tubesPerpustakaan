@@ -19,4 +19,9 @@ public class AnggotaController {
         AnggotaModel model = new AnggotaModel();
         return model.save(anggota);
     }
+     
+      public List<Anggota> loadAnggota() throws SQLException {
+        AnggotaModel model = new AnggotaModel();
+        return model.loadAnggota();
+    }
 }
