@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="com.toedter.calendar.JYearChooser" name="jYearChooser1">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -44,11 +48,11 @@
                       </Group>
                       <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="tfTahunTerbit" alignment="0" pref="150" max="32767" attributes="0"/>
                           <Component id="lblRegistrasi" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfJudul" alignment="0" max="32767" attributes="0"/>
+                          <Component id="tfJudul" alignment="0" pref="150" max="32767" attributes="0"/>
                           <Component id="tfPengarang" alignment="0" max="32767" attributes="0"/>
                           <Component id="tfJumlah" max="32767" attributes="0"/>
+                          <Component id="tfTahunTerbit" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -74,18 +78,23 @@
                   <Component id="tfPengarang" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblTahunTerbit" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="tfTahunTerbit" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lblJumlah" min="-2" max="-2" attributes="0"/>
-                  <Component id="tfJumlah" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="lblTahunTerbit" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblJumlah" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfJumlah" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="46" max="32767" attributes="0"/>
+                      <Component id="btnTambah" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="tfTahunTerbit" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="43" max="32767" attributes="0"/>
-              <Component id="btnTambah" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -131,8 +140,6 @@
     </Component>
     <Component class="javax.swing.JTextField" name="tfPengarang">
     </Component>
-    <Component class="javax.swing.JTextField" name="tfTahunTerbit">
-    </Component>
     <Component class="javax.swing.JTextField" name="tfJumlah">
     </Component>
     <Component class="javax.swing.JButton" name="btnTambah">
@@ -142,6 +149,8 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTambahActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="com.toedter.calendar.JDateChooser" name="tfTahunTerbit">
     </Component>
   </SubComponents>
 </Form>

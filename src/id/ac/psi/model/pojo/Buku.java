@@ -16,14 +16,14 @@ public class Buku {
     private int id;
     private String judulBuku;
     private String namaPengarang;
-    private Year tahunTerbit;
+    private Date tahunTerbit;
     private int jumlahBuku;
     
     public Buku(){
         
     }
     
-    public Buku(String judulBuku, String namaPengarang, Year tahunTerbit, int jumlahBuku){
+    public Buku(String judulBuku, String namaPengarang, Date tahunTerbit, int jumlahBuku){
         this.judulBuku = judulBuku;
         this.namaPengarang = namaPengarang;
         this.tahunTerbit = tahunTerbit;
